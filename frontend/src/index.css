@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ede9fe;
+  --color-brand-200: #ddd6fe;
+  --color-brand-300: #c4b5fd;
+  --color-brand-350: #a78bfa;
+  --color-brand-400: #a78bfa;
+  --color-brand-405: #a78bfa;
+  --color-brand-450: #818cf8;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c3aed;
+  --color-brand-605: #7c3aed;
+  --color-brand-650: #6d28d9;
+  --color-brand-700: #6d28d9;
+  --color-brand-800: #5b21b6;
+  --color-brand-900: #4c1d95;
+
+  --color-emerald-400: #34d399;
+  --color-emerald-405: #34d399;
+  --color-emerald-555: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-605: #059669;
+  
+  --color-rose-400: #f87171;
+  --color-rose-405: #f87171;
+  --color-rose-450: #f43f5e;
+  --color-rose-455: #e11d48;
+  --color-rose-500: #ef4444;
+  --color-rose-505: #f43f5e;
+  --color-rose-600: #e11d48;
+  
+  --color-amber-400: #fbbf24;
+  --color-amber-405: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-505: #f59e0b;
+  --color-amber-550: #d97706;
+  --color-amber-600: #d97706;
+  --color-amber-605: #d97706;
+  
+  --color-slate-205: #e2e8f0;
+  --color-slate-305: #cbd5e1;
+  --color-slate-405: #94a3b8;
+  --color-slate-450: #64748b;
+  --color-slate-455: #64748b;
+  --color-slate-605: #475569;
+  --color-slate-655: #334155;
+  --color-slate-755: #1e293b;
+  --color-slate-805: #0f172a;
+  --color-slate-850: #0f172a;
+  --color-slate-905: #020617;
+  --color-slate-955: #020617;
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    @apply antialiased text-slate-700 bg-slate-50 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply tracking-tight;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.4);
+}
+
+/* Premium ERP Design System Classes */
+.erp-card {
+  @apply bg-white dark:bg-slate-800 border border-slate-200/50 dark:border-slate-700/50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.erp-card-interactive {
+  @apply bg-white dark:bg-slate-800 border border-slate-200/50 dark:border-slate-700/50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 hover:border-brand-500/50 dark:hover:border-brand-500/50 hover:scale-[1.01] active:scale-[0.99] cursor-pointer;
+}
+
+.erp-input {
+  @apply w-full bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl py-3 px-4 text-sm outline-none transition-all duration-150 text-slate-800 dark:text-white placeholder-slate-400 focus:border-brand-500 focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-500/10;
+}
+
+.erp-btn-primary {
+  @apply flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-xs shadow-md shadow-brand-500/10 hover:shadow-lg hover:shadow-brand-500/20 active:scale-[0.98] transition-all duration-150 cursor-pointer disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.erp-btn-secondary {
+  @apply flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100/80 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white font-bold text-xs active:scale-[0.98] transition-all duration-150 cursor-pointer;
+}
+
+.erp-btn-danger {
+  @apply flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow-md shadow-rose-500/10 hover:shadow-lg hover:shadow-rose-500/20 active:scale-[0.98] transition-all duration-150 cursor-pointer;
+}
+
+/* Badge styles */
+.erp-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide border;
+}
+
+.erp-badge-success {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide border bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20;
+}
+
+.erp-badge-warning {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide border bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20;
+}
+
+.erp-badge-danger {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide border bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20;
+}
+
+.erp-badge-info {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide border bg-brand-500/10 text-brand-600 dark:text-brand-405 border-brand-500/20;
+}
+
+.erp-badge-neutral {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide border bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 border-slate-200 dark:border-slate-700;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  @apply bg-white/70 dark:bg-slate-800/70 backdrop-blur-md border border-white/20 dark:border-slate-700/30;
+}
+
+.glass-card {
+  @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-sm rounded-2xl;
+}
